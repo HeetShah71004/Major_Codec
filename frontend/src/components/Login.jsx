@@ -6,7 +6,9 @@ import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import axios from 'axios';
 
-const url = import.meta.env.VITE_BACKEND_URL;
+const url = import.meta.env.MODE === 'development' 
+  ? import.meta.env.VITE_BACKEND_URL 
+  : 'https://codec-backend.onrender.com';
 
 const Login = () => {
   const particlesInit = async (engine) => {
