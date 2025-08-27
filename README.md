@@ -39,7 +39,6 @@ A real-time collaborative code editor built using the MERN stack with Socket.IO 
 
 ```bash
 git clone https://github.com/HeetShah71004/Major_Codec.git
-cd Major_Codec
 ```
 
 ### install packages
