@@ -9,10 +9,7 @@ import { saveAs } from "file-saver";
 import { FiCopy, FiSun, FiMoon, FiTrash2 } from "react-icons/fi";
 import EmojiPicker from "emoji-picker-react";
 
-const socket =
-  import.meta.env.MODE === "development"
-    ? io(import.meta.env.VITE_BACKEND_URL)
-    : io("https://codec-backend.onrender.com");
+const socket = io(import.meta.env.VITE_BACKEND_URL);
 
 // Default code templates for each language
 const DEFAULT_CODE = {
