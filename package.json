@@ -1,0 +1,23 @@
+{
+  "name": "deploy_codec",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cce": "file:",
+    "react-icons": "^5.5.0",
+    "shadcn-ui": "^0.9.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
