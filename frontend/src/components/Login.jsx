@@ -5,7 +5,9 @@ import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import axios from 'axios';
 
-const url = import.meta.env.VITE_BACKEND_URL;
+const url = import.meta.env.MODE === 'development' 
+  ? 'http://localhost:5001/'
+  : import.meta.env.VITE_BACKEND_URL ;
 
 const Login = () => {
   const particlesInit = async (engine) => {
