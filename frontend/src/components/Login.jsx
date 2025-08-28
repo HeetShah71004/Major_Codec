@@ -1,13 +1,14 @@
-import { useState} from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import axios from 'axios';
 
 const url = import.meta.env.MODE === 'development' 
-  ? 'http://localhost:5001/'
-  : import.meta.env.VITE_BACKEND_URL ;
+  ? import.meta.env.VITE_BACKEND_URL 
+  : 'https://codec-backend.onrender.com';
 
 const Login = () => {
   const particlesInit = async (engine) => {

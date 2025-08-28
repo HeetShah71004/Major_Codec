@@ -7,8 +7,8 @@ import { loadFull } from 'tsparticles';
 import axios from 'axios';
 
 const url = import.meta.env.MODE === 'development' 
-  ? 'http://localhost:5001/'
-  : import.meta.env.VITE_BACKEND_URL ;
+  ? import.meta.env.VITE_BACKEND_URL 
+  : 'https://codec-backend.onrender.com';
 
 const Signup = () => {
   const particlesInit = async (engine) => {
