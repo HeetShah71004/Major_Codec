@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";  
-import { Toaster, } from "react-hot-toast";
+import { useState, useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import Navigation from "../components/Navigation";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
@@ -55,7 +55,12 @@ const Home = () => {
       <FeedbackForm />
       <Footer />
       <AdComponent />
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster
+        position="bottom-right"
+        autoClose={2000}
+        reverseOrder={false}
+        hideProgressBar={true}
+      />
     </div>
   );
 };
