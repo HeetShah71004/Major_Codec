@@ -96,7 +96,7 @@ app.post("/create-checkout-session", async (req, res) => {
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   },
 });
