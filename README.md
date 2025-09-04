@@ -32,3 +32,24 @@ A real-time collaborative code editor built using the MERN stack with Socket.IO 
 - MongoDB 
 
 ---
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/HeetShah71004/Major_Codec.git
+cd Codec
+```
+
+### install packages
+
+```bash
+npm run build
+```
+
+### Run backend and frontend
+
+```bash
+npm run dev
+```
