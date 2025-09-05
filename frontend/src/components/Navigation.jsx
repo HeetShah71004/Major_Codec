@@ -8,7 +8,9 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [user, setUser] = useState(null);
   const [userPlan, setUserPlan] = useState("Free");
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -83,17 +85,29 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <motion.div whileHover={{ rotate: 360, scale: 1.5 }} whileTap={{ scale: 0.9 }}>
-              <MonitorCog onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}
-               className="text-[#3b82f6]" size={28} />
+            <motion.div
+              whileHover={{ rotate: 360, scale: 1.5 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <MonitorCog
+                onClick={() =>
+                  document
+                    .getElementById("hero")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="text-[#3b82f6]"
+                size={28}
+              />
             </motion.div>
             <motion.h1
-              onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .getElementById("hero")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="text-2xl font-bold font-display text-gray-600 dark:text-white cursor-pointer"
-              whileHover={{ scale: 1.05 }}
             >
               Code<span className="text-[#3b82f6]">C</span>
             </motion.h1>
@@ -102,9 +116,17 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((section) => (
-              <motion.li key={section} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.li
+                key={section}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <button
-                  onClick={() => document.getElementById(section)?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById(section)
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="relative text-lg text-gray-600 font-bold dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-500 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full"
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -119,7 +141,9 @@ const Navigation = () => {
               <div className="hidden md:flex items-center gap-3">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className={`px-3 py-1 text-xs font-bold rounded-full ${getPlanBadgeStyle(userPlan)}`}
+                  className={`px-3 py-1 text-xs font-bold rounded-full ${getPlanBadgeStyle(
+                    userPlan
+                  )}`}
                 >
                   {userPlan}
                 </motion.div>
@@ -139,7 +163,10 @@ const Navigation = () => {
             ) : (
               <div className="hidden md:flex items-center gap-4">
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <Link to="/login" className="text-sm font-bold text-gray-700 dark:text-gray-300 hover:text-blue-500">
+                  <Link
+                    to="/login"
+                    className="text-sm font-bold text-gray-700 dark:text-gray-300 hover:text-blue-500"
+                  >
                     Login
                   </Link>
                 </motion.div>
@@ -162,11 +189,25 @@ const Navigation = () => {
               className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-700"
             >
               {darkMode ? (
-                <svg className="h-6 w-6 text-yellow-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.07 6.07l-.71-.71M6.34 6.34l-.71-.71m12.02 0l-.71.71M6.34 17.66l-.71.71M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                <svg
+                  className="h-6 w-6 text-yellow-400"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.07 6.07l-.71-.71M6.34 6.34l-.71-.71m12.02 0l-.71.71M6.34 17.66l-.71.71M12 5a7 7 0 100 14 7 7 0 000-14z"
+                  />
                 </svg>
               ) : (
-                <svg className="h-6 w-6 text-gray-800 dark:text-gray-100" viewBox="0 0 20 20" fill="currentColor">
+                <svg
+                  className="h-6 w-6 text-gray-800 dark:text-gray-100"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
                   <path d="M17.293 13.293a8 8 0 01-10.586-10.586 8 8 0 1010.586 10.586z" />
                 </svg>
               )}
@@ -198,7 +239,9 @@ const Navigation = () => {
                 <li key={section}>
                   <button
                     onClick={() => {
-                      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+                      document
+                        .getElementById(section)
+                        ?.scrollIntoView({ behavior: "smooth" });
                       setMobileMenuOpen(false);
                     }}
                     className="text-lg text-black dark:text-gray-300 hover:text-blue-500"
@@ -219,7 +262,11 @@ const Navigation = () => {
                 </motion.button>
               ) : (
                 <>
-                  <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="text-lg text-blue-500">
+                  <Link
+                    to="/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg text-blue-500"
+                  >
                     Login
                   </Link>
                   <Link
