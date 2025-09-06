@@ -109,7 +109,7 @@ const Navigation = () => {
               }
               className="text-2xl font-bold font-display text-gray-600 dark:text-white cursor-pointer"
             >
-              Code<span className="text-[#3b82f6]">C</span>
+              Code<span className="text-[#8b5cf6]">C</span>
             </motion.h1>
           </Link>
 
